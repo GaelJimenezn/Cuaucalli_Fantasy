@@ -1,7 +1,8 @@
 import { useState } from 'react';
-import { Dialog, DialogContent } from '@/components/ui/dialog';
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
 import { X, User, Palette, Eye } from 'lucide-react';
+import { Link } from 'wouter';
 import duende1 from '@assets/image_1757966727161.png';
 
 export default function Gallery() {
@@ -146,17 +147,33 @@ export default function Gallery() {
             ))}
           </div>
 
-          {/* Physical Gallery Info */}
+          {/* Gallery Links */}
           <div className="mt-16 text-center">
             <div className="bg-gradient-to-r from-primary/5 to-chart-3/5 rounded-lg p-8 max-w-3xl mx-auto">
               <h3 className="font-fantasy-title text-2xl text-primary mb-4">
-                Galería Física
+                Galería Completa
               </h3>
-              <p className="font-fantasy-body text-muted-foreground">
-                Durante el evento, también podrás visitar nuestra galería física donde se 
-                exhibirán trabajos originales de los estudiantes. Una experiencia única 
-                para apreciar el arte en toda su dimensión.
+              <p className="font-fantasy-body text-muted-foreground mb-6">
+                Esta es una pequeña muestra de nuestras creaciones. Visita nuestra galería 
+                completa organizada por ediciones para explorar todas las obras de estudiantes 
+                y descubrir el talento de cada año.
               </p>
+              <div className="space-y-4">
+                <Button 
+                  asChild
+                  size="lg"
+                  className="bg-primary hover:bg-primary/90"
+                  data-testid="button-visit-full-gallery"
+                >
+                  <Link href="/gallery">
+                    <Eye className="h-4 w-4 mr-2" />
+                    Ver Galería Completa
+                  </Link>
+                </Button>
+                <p className="font-fantasy-body text-sm text-muted-foreground">
+                  Durante el evento, también podrás visitar nuestra galería física con trabajos originales
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -166,32 +183,38 @@ export default function Gallery() {
       <Dialog open={!!selectedImage} onOpenChange={closeModal}>
         <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
           {selectedImage && (
-            <div className="space-y-6">
-              <div className="flex justify-between items-start">
-                <div>
-                  <h2 className="font-fantasy-title text-2xl text-primary mb-2">
-                    {selectedImage.title}
-                  </h2>
-                  <div className="space-y-1">
-                    <div className="flex items-center space-x-2 text-muted-foreground">
-                      <User className="h-4 w-4" />
-                      <span className="font-fantasy-body">Artista: {selectedImage.artist}</span>
-                    </div>
-                    <div className="flex items-center space-x-2 text-muted-foreground">
-                      <Palette className="h-4 w-4" />
-                      <span className="font-fantasy-body">Técnica: {selectedImage.technique}</span>
+            <>
+              <DialogHeader>
+                <DialogTitle className="font-fantasy-title text-2xl text-primary">
+                  {selectedImage.title}
+                </DialogTitle>
+                <DialogDescription className="font-fantasy-body text-muted-foreground">
+                  Obra de {selectedImage.artist} - {selectedImage.technique}
+                </DialogDescription>
+              </DialogHeader>
+              <div className="space-y-6">
+                <div className="flex justify-between items-start">
+                  <div>
+                    <div className="space-y-1">
+                      <div className="flex items-center space-x-2 text-muted-foreground">
+                        <User className="h-4 w-4" />
+                        <span className="font-fantasy-body">Artista: {selectedImage.artist}</span>
+                      </div>
+                      <div className="flex items-center space-x-2 text-muted-foreground">
+                        <Palette className="h-4 w-4" />
+                        <span className="font-fantasy-body">Técnica: {selectedImage.technique}</span>
+                      </div>
                     </div>
                   </div>
+                  <Button 
+                    variant="ghost" 
+                    size="icon" 
+                    onClick={closeModal}
+                    data-testid="button-close-gallery-modal"
+                  >
+                    <X className="h-4 w-4" />
+                  </Button>
                 </div>
-                <Button 
-                  variant="ghost" 
-                  size="icon" 
-                  onClick={closeModal}
-                  data-testid="button-close-gallery-modal"
-                >
-                  <X className="h-4 w-4" />
-                </Button>
-              </div>
               
               <div className="flex justify-center">
                 <img 
@@ -207,7 +230,8 @@ export default function Gallery() {
                   {selectedImage.description}
                 </p>
               </div>
-            </div>
+              </div>
+            </>
           )}
         </DialogContent>
       </Dialog>

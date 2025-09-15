@@ -1,49 +1,8 @@
-import { useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
-import { Label } from '@/components/ui/label';
 import { Mail, Phone, MapPin, Send, MessageSquare } from 'lucide-react';
-import { useToast } from '@/hooks/use-toast';
 
 export default function Contact() {
-  const { toast } = useToast();
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: ''
-  });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }));
-    console.log(`Contact form ${name} updated:`, value);
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    
-    console.log('Contact form submitted:', formData);
-    
-    // //todo: remove mock functionality - implement real form submission
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 1500));
-    
-    toast({
-      title: "¡Mensaje enviado!",
-      description: "Gracias por contactarnos. Te responderemos pronto.",
-    });
-    
-    // Reset form
-    setFormData({ name: '', email: '', message: '' });
-    setIsSubmitting(false);
-  };
 
   const contactInfo = [
     {
@@ -90,78 +49,43 @@ export default function Contact() {
                   <span>Envíanos un mensaje</span>
                 </CardTitle>
               </CardHeader>
-              <CardContent>
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div className="space-y-2">
-                    <Label htmlFor="name" className="font-fantasy-body font-semibold">
-                      Nombre completo
-                    </Label>
-                    <Input
-                      id="name"
-                      name="name"
-                      type="text"
-                      value={formData.name}
-                      onChange={handleInputChange}
-                      placeholder="Tu nombre completo"
-                      required
-                      className="font-fantasy-body"
-                      data-testid="input-contact-name"
-                    />
+              <CardContent className="text-center p-8">
+                <div className="space-y-6">
+                  <div className="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mx-auto">
+                    <MessageSquare className="h-8 w-8 text-primary" />
                   </div>
-
-                  <div className="space-y-2">
-                    <Label htmlFor="email" className="font-fantasy-body font-semibold">
-                      Correo electrónico
-                    </Label>
-                    <Input
-                      id="email"
-                      name="email"
-                      type="email"
-                      value={formData.email}
-                      onChange={handleInputChange}
-                      placeholder="tu.email@ejemplo.com"
-                      required
-                      className="font-fantasy-body"
-                      data-testid="input-contact-email"
-                    />
-                  </div>
-
-                  <div className="space-y-2">
-                    <Label htmlFor="message" className="font-fantasy-body font-semibold">
-                      Mensaje
-                    </Label>
-                    <Textarea
-                      id="message"
-                      name="message"
-                      value={formData.message}
-                      onChange={handleInputChange}
-                      placeholder="Cuéntanos en qué podemos ayudarte..."
-                      required
-                      rows={6}
-                      className="font-fantasy-body resize-none"
-                      data-testid="textarea-contact-message"
-                    />
+                  
+                  <div>
+                    <h3 className="font-fantasy-body font-semibold text-lg text-foreground mb-2">
+                      Formulario de Contacto
+                    </h3>
+                    <p className="font-fantasy-body text-muted-foreground mb-6">
+                      Utiliza nuestro formulario oficial para enviar tus consultas, 
+                      solicitudes de patrocinio o cualquier pregunta sobre el evento.
+                    </p>
                   </div>
 
                   <Button 
-                    type="submit" 
-                    className="w-full bg-primary hover:bg-primary/90" 
-                    disabled={isSubmitting}
-                    data-testid="button-submit-contact"
+                    asChild
+                    size="lg"
+                    className="bg-primary hover:bg-primary/90"
+                    data-testid="button-contact-form"
                   >
-                    {isSubmitting ? (
-                      <div className="flex items-center space-x-2">
-                        <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
-                        <span>Enviando...</span>
-                      </div>
-                    ) : (
-                      <div className="flex items-center space-x-2">
-                        <Send className="h-4 w-4" />
-                        <span>Enviar Mensaje</span>
-                      </div>
-                    )}
+                    <a 
+                      href="https://docs.google.com/forms/d/e/1FAIpQLSftWc0Cd4329zc8tQr7ElbN-HDG2EyJ60_wwHvuNqZZB7ZnDA/viewform"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center space-x-2"
+                    >
+                      <Send className="h-4 w-4" />
+                      <span>Abrir Formulario de Contacto</span>
+                    </a>
                   </Button>
-                </form>
+
+                  <p className="text-sm text-muted-foreground">
+                    El formulario se abrirá en una nueva ventana
+                  </p>
+                </div>
               </CardContent>
             </Card>
 
