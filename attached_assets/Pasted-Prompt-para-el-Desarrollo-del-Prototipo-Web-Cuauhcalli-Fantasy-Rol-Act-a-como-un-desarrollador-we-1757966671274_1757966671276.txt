@@ -1,0 +1,172 @@
+Prompt para el Desarrollo del Prototipo Web "Cuauhcalli Fantasy"
+Rol: Actúa como un desarrollador web full-stack y diseñador UI/UX. Tu tarea es crear una propuesta de diseño y un prototipo funcional para el sitio web del evento "Cuauhcalli Fantasy".
+
+Objetivo Principal: Diseñar y prototipar un sitio web informativo, atractivo y funcional para el evento universitario "Cuauhcalli Fantasy". El sitio debe servir como el punto central de información para asistentes, participantes de concursos y patrocinadores.
+
+1. Tono y Estilo Visual
+Basado en la guía de estilo proporcionada, el sitio debe tener una apariencia profesional pero creativa, con un toque de fantasía.
+
+Tipografía:
+
+Títulos: Usar la fuente "Metamorphovs".
+
+Texto de cuerpo: Usar la fuente "Judson".
+
+Paleta de Colores:
+
+#821A29 (Rojo vino/Principal): Para títulos, botones y elementos destacados.
+
+#561A22 (Café oscuro): Para fondos de sección o texto secundario.
+
+#F6B269 (Naranja/Durazno): Para llamadas a la acción, acentos o fondos claros.
+
+#71BEC6 (Azul verdoso): Para íconos, enlaces o elementos de soporte.
+
+#EADCD9 (Hueso/Rosa pálido): Para fondos principales de página y áreas de texto.
+
+Logo: Utiliza los archivos Logo.png y Logo.svg proporcionados para el encabezado y el pie de página.
+
+2. Estructura del Sitio Web y Contenido por Sección
+El sitio debe ser una sola página (landing page) con anclas de navegación, pero con secciones que podrían expandirse a páginas dedicadas en el futuro (especialmente "Concursos" y "Galería").
+
+a. Sección: Inicio
+
+Encabezado: Logo del evento a la izquierda y menú de navegación a la derecha (Inicio, Sobre el Evento, Actividades, Concursos, Galería, Patrocinadores, Contacto).
+
+Hero Image: Una imagen principal grande y atractiva. Utiliza como inspiración las imágenes de personajes proporcionadas (duende1.png, HADAS FINAL.png, OGRO FINAL 1.png).
+
+Lema: Incluir el nombre del evento "Cuauhcalli Fantasy" y un lema como "Donde florece el arte universitario".
+
+Calendario Resumido: Un pequeño bloque visual que resuma el cronograma del día del evento (10:00 AM a 5:00 PM).
+
+Llamada a la Acción (CTA): Un botón principal que diga "Explora el Evento" y que desplace al usuario a la sección "Sobre el Evento".
+
+b. Sección: Sobre el Evento
+
+Descripción: Párrafo introductorio. Usa el texto del PDF: "Cuauhcalli Fantasy es una iniciativa multidisciplinaria que busca brindar un espacio integral de exposición, competencia, aprendizaje y recreación para estudiantes...".
+
+
+Objetivos: Listar los objetivos clave con íconos.
+
+Fomentar la proyección del talento estudiantil.
+
+Fortalecer la oferta académica.
+
+Promover la integración universitaria.
+
+Impulsar el networking con profesionales.
+
+
+Sede: Mencionar que el evento se realizará en las instalaciones de la Universidad Cuauhtémoc, sede constituyentes. Añadir la dirección y un mapa de Google Maps integrado.
+
+c. Sección: Actividades
+Un layout de tarjetas o columnas para describir las diferentes zonas del evento.
+
+Conferencias y Masterclasses:
+
+
+Ubicación: Auditorio.
+
+Contenido: Listar las conferencias con ponente, tema y horario. Extraer del cronograma del PDF.
+
+
+Stands:
+
+
+Ubicación: Patio Central.
+
+
+Contenido: Mencionar que habrá stands empresariales (Pixelatl, XP-Pen, Utopía Comics) y de artistas independientes.
+
+Show de Medio Tiempo:
+
+
+Ubicación: Patio Central.
+
+
+Horario: 1:45 PM - 2:15 PM.
+
+Zona de Juegos:
+
+
+Ubicación: Patio de Odontología.
+
+
+
+Contenido: Explicar las actividades: Just Dance, Gartic Phone, taller de acuarelas y presentación de demos de videojuegos. Mencionar el concurso de videojuegos con premiación.
+
+
+
+
+d. Sección: Concursos
+
+Requerimiento Clave: Esta sección debe tener una pestaña o sub-navegación para cada uno de los 4 concursos, como se solicitó.
+
+Página Principal de Concursos: Mostrar 4 tarjetas, una por cada concurso (Diseño de Personajes, Esculpido Digital, Storyboard, Cineminuto). Cada tarjeta debe enlazar a su respectiva subpágina/sección detallada.
+
+Sub-páginas de cada concurso:
+
+Título: Nombre del concurso.
+
+
+Convocatoria: Mostrar la información clave: objetivo, tema, requisitos, fechas importantes y premios.
+
+
+
+
+
+Jueces: Crear un apartado para presentar a los jueces de cada categoría (ej. Diseño de Personajes: Chucho, Miriam, Alexis).
+
+Descarga: Un botón para descargar el PDF completo de la convocatoria (Concursos.pdf).
+
+e. Sección: Galería Virtual
+
+Requerimiento Clave: El diseño debe ser tipo "Pinterest" o similar a la referencia de animum3d.com. Debe ser una cuadrícula de imágenes (grid).
+
+Contenido:
+
+Mencionar que también habrá una galería física durante el evento.
+
+La galería debe mostrar los trabajos de los alumnos. Usar las imágenes duende1.png, duende2.png, HADAS FINAL.png, OGRO FINAL 1.png, etc., como contenido de ejemplo.
+
+Al hacer clic en una imagen, se debe abrir un modal o lightbox que muestre la imagen más grande, junto con:
+
+Nombre del autor.
+
+Título de la obra.
+
+Técnica utilizada.
+
+f. Sección: Patrocinadores y Aliados
+
+Diseño: Un carrusel o una cuadrícula con los logos de los patrocinadores.
+
+Contenido:
+
+Incluir los logos de patrocinadores confirmados como XP-Pen y Wacom.
+
+Incluir a los patrocinadores de premios: Richard (impresión 3D) y Chucho y Santiago (sudaderas, playeras, termos).
+
+Añadir un bloque de "¡Tu marca aquí!" para atraer a más patrocinadores.
+
+g. Sección: Contacto
+
+Formulario: Un formulario simple con campos para Nombre, Correo Electrónico y Mensaje.
+
+Información Adicional: Incluir íconos y enlaces a redes sociales, un correo oficial y un número de WhatsApp si se va a utilizar.
+
+3. Activos Proporcionados a Utilizar
+Documento Maestro: Cuaucalli Fantasy.pdf (para todo el contenido general, horarios, objetivos).
+
+Documento de Concursos: Concursos.pdf (para los detalles específicos de cada convocatoria).
+
+Identidad Visual: Imagen con tipografías y paleta de colores.
+
+Logotipos: Logo.png, Logo.svg, Logo.jpg, Logo copy.pdf.
+
+Contenido para Galería (Ejemplos): duende1.png, duende2.png, duende3.png, HADA 2 FINAL.png, HADAS FINAL.png, OGRO FINAL 1.png, OGRO FINAL 2.png, OGRO FINAL 3.png.
+
+Inspiración de Diseño (Galería): https://www.animum3d.com/alumnos/galeria-proyectos/.
+
+4. Entregable
+Un prototipo interactivo de alta fidelidad (usando Figma, Adobe XD, o HTML/CSS/JS) que sea responsivo (se vea bien en computadoras y dispositivos móviles) y que siga todas las especificaciones mencionadas.
